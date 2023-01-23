@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-        printDiamond(10,20);
+        printDiamond(10,25);
 
     }
 
@@ -16,10 +16,7 @@ public class Main {
 
     }
 
-
-
     static String[][] rombForPrtint(int height, int width) {
-
 
         String[][] romb = new String[height][width];
 
@@ -28,21 +25,22 @@ public class Main {
         int halfH = height;
         int delimiter = height/width;
 
-
-
         while (height > 0 && right < width && left > 0) {
-            height--;
-            romb[height][right++] = "#";
-            romb[height][--left] = "#";
-            height-=delimiter;
+
+            if (height > halfH / 2 ) {
+
+                height--;
+                romb[height][right++] = "#";
+                romb[height][--left] = "#";
+                height -= delimiter;
+            }
 
             if (height <= halfH / 2 ) {
-                while (height > 0 && left < width && right > 0) {
+
                     height--;
                     romb[height][--right] = "#";
                     romb[height][left++] = "#";
-                    height-=delimiter;
-                }
+                    height -= delimiter;
             }
         }
         return romb;
