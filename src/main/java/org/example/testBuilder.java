@@ -1,8 +1,6 @@
 package org.example;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class testBuilder {
     public static void main(String[] args) {
@@ -35,10 +33,3 @@ public class testBuilder {
         return str.toString();
     }
 }
- class TestThread extends Thread{
-
-     @Override
-     public void run() {
-         super.run();
-     }
- }
