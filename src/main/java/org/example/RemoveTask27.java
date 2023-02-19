@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.Arrays;
 
-public class RemoveTask21 {
+public class RemoveTask27 {
 
     public static void main(String[] args) {
 
