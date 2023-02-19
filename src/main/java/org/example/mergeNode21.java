@@ -4,7 +4,7 @@ public class mergeNode21 {
 
     public static void main(String[] args) {
 
-        ListNode l1 = new ListNode(0,new ListNode(1,new ListNode(3,new ListNode(4))));
+        ListNode l1 = new ListNode();
         ListNode l2 = new ListNode(1,new ListNode(2,new ListNode(3)));
         System.out.println(mergeTwoLists(l1,l2));
 
@@ -14,8 +14,10 @@ public class mergeNode21 {
         ListNode result = new ListNode();
         ListNode temp = result;
 
-         checkZero(first,temp);
-         checkZero(second,temp);
+       if(first.val==0 || second.val ==0) return checkNull(first,second);
+
+       checkZero(first,temp);
+       checkZero(second,temp);
 
         while (true){
             ListNode node = new ListNode();
@@ -48,11 +50,21 @@ public class mergeNode21 {
 
     static void checkZero(ListNode data, ListNode temp)  {
 
-        if (data.val==0){
+        while (data.val==0){
             ListNode node = new ListNode();
             temp.val= data.val;
             temp.next=node;
             temp = temp.next;
         }
     }
+
+    static ListNode checkNull(ListNode first , ListNode second){
+
+
+        if(first.val==0 && second.val==0) return new ListNode();
+        if (first.val==0) return second;
+        if (second.val==0) return first;
+        return new ListNode(404);
+    }
+
 }
