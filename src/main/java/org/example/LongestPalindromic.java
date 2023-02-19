@@ -1,9 +1,13 @@
 package org.example;
 
+import java.util.logging.Logger;
+
 public class LongestPalindromic {
+
+    static Logger log = Logger.getGlobal();
     public static void main(String[] args) {
 
-        System.out.println(longest("cbbd"));
+        System.out.println(longest("vblaalfaerrredsa"));
 
     }
 
@@ -14,6 +18,7 @@ public class LongestPalindromic {
         int maxLength=0;
 
         for (int i = 0; i < massive.length; i++) {
+
             int count = i;
             StringBuilder palindromicBuilder = new StringBuilder();
 
@@ -22,7 +27,6 @@ public class LongestPalindromic {
                 palindromicBuilder.append(massive[count]);
                 count++;
                 if (count == massive.length) break;
-
 
                 if (massive[i].equals(massive[count-1])) {
 
